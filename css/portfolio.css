@@ -1,0 +1,250 @@
+/* Estilo para Portfólio (Galeria com Containers) */
+#portfolio {
+    padding: 80px 0;
+}
+
+#portfolio .intro-text {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.event-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+    /* Espaçamento entre os containers de eventos */
+    padding: 40px;
+    /* Padding interno */
+    text-align: left;
+    /* Alinha o título do evento à esquerda */
+}
+
+.event-container h3 {
+    font-family: var(--font-titulo);
+    font-size: 2.2em;
+    /* Tamanho do nome dos noivos */
+    color: var(--cor-secundaria);
+    margin-bottom: 30px;
+    /* Espaço abaixo do nome dos noivos */
+    text-align: center;
+    /* Centraliza o nome do evento */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Grade de 4 colunas em telas maiores */
+    gap: 20px;
+    /* Espaço entre as imagens */
+}
+
+.gallery-item {
+    border-radius: 8px;
+    /* Mantém a borda arredondada na imagem */
+    overflow: hidden;
+    /* Garante que a imagem não saia da borda */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* Sombra mais sutil para cada item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    /* Altura fixa para as imagens da grade */
+    object-fit: cover;
+    /* Recorta a imagem para preencher o espaço */
+    display: block;
+    /* Remove espaço extra abaixo da imagem */
+}
+
+/* Call to Action Final */
+#final-cta {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-top: 80px;
+    /* Margem antes do footer */
+}
+
+#final-cta h2 {
+    color: white;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+}
+
+#final-cta h2::after {
+    background-color: white;
+}
+
+#final-cta p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+}
+
+#final-cta .btn {
+    background-color: white;
+    color: var(--cor-principal);
+    padding: 18px 40px;
+    font-size: 1.1em;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#final-cta .btn:hover {
+    background-color: var(--cor-acento-forte);
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+}
+
+footer .footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+footer .footer-col h4 {
+    color: var(--cor-acento-suave);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+footer .footer-col ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-col a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .footer-col a:hover {
+    color: var(--cor-acento-forte);
+}
+
+footer .social-icons a {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--cor-acento-forte);
+}
+
+footer .copyright {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Ajusta para 3 colunas ou menos */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        margin-top: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    .event-container {
+        padding: 25px;
+        /* Menos padding interno */
+        margin-bottom: 40px;
+        /* Menos espaçamento */
+    }
+
+    .event-container h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna em telas muito pequenas */
+    }
+
+    .gallery-item img {
+        height: 250px;
+        /* Aumenta altura da imagem em mobile */
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-col {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    footer .social-icons {
+        margin-top: 20px;
+    }
+}

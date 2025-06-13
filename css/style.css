@@ -1,0 +1,144 @@
+/* Variáveis de Cores */
+:root {
+    --cor-principal: #4b302e;
+    --cor-secundaria: #bb7d7d;
+    --cor-acento-suave: #cda2a2;
+    --cor-acento-forte: #de7684;
+    --cor-fundo: #ffe7ef;
+    --font-titulo: 'Playfair Display', serif;
+    --font-texto: 'Open Sans', sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-texto);
+    color: var(--cor-principal);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-titulo);
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header e Navegação */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px;
+    /* Ajuste conforme o tamanho real da logo */
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    font-family: var(--font-titulo);
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-left: 10px;
+    color: var(--cor-principal);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--cor-principal);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--cor-acento-forte);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--cor-principal);
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+/* Seções Gerais */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--cor-acento-forte);
+}
