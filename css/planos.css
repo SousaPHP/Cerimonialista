@@ -1,6 +1,6 @@
 /* Estilo para página Planos de Casamento */
 #wedding-plans {
-    padding: 80px 0;
+    padding: 80px 0 30px 0;
 }
 
 #wedding-plans .intro-text {
@@ -19,7 +19,7 @@
     justify-content: center;
     gap: 60px;
     /* Mais espaço entre blocos de plano */
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     /* Mais espaço entre as seções de cada plano */
     padding: 40px;
     background-color: white;
@@ -54,10 +54,10 @@
 }
 
 .plan-image img {
-    width: 100%;
+    width: 40%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    
 }
 
 .plan-content {
@@ -66,6 +66,8 @@
     min-width: 350px;
     max-width: 650px;
     text-align: left;
+    align-self: center;
+    justify-items: center;
 }
 
 .plan-content h3 {
@@ -149,117 +151,11 @@
     color: white;
     padding: 30px;
     border-radius: 8px;
-    margin-top: 80px;
-    /* Margem maior para separar dos planos */
     font-size: 1.1em;
     line-height: 1.8;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Call to Action Final - Mesma seção do index.html */
-#final-cta {
-    background-color: var(--cor-secundaria);
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-    margin-top: 80px;
-    /* Margem antes do footer */
-}
-
-#final-cta h2 {
-    color: white;
-    font-size: 2.8em;
-    margin-bottom: 25px;
-}
-
-#final-cta h2::after {
-    background-color: white;
-}
-
-#final-cta p {
-    font-size: 1.2em;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    line-height: 1.8;
-}
-
-#final-cta .btn {
-    background-color: white;
-    color: var(--cor-principal);
-    padding: 18px 40px;
-    font-size: 1.1em;
-    display: inline-block;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#final-cta .btn:hover {
-    background-color: var(--cor-acento-forte);
-    color: white;
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--cor-principal);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    text-align: left;
-}
-
-footer .footer-col {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
-}
-
-footer .footer-col h4 {
-    color: var(--cor-acento-suave);
-    margin-bottom: 20px;
-    font-size: 1.4em;
-}
-
-footer .footer-col ul li {
-    margin-bottom: 10px;
-}
-
-footer .footer-col a {
-    color: white;
-    transition: color 0.3s ease;
-}
-
-footer .footer-col a:hover {
-    color: var(--cor-acento-forte);
-}
-
-footer .social-icons a {
-    font-size: 1.5em;
-    margin: 0 10px;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: var(--cor-acento-forte);
-}
-
-footer .copyright {
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
-}
-
 /* Media Queries para Responsividade */
 @media (max-width: 992px) {
     .plan-section {

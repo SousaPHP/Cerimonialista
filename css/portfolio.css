@@ -1,6 +1,6 @@
 /* Estilo para Portfólio (Galeria com Containers) */
 #portfolio {
-    padding: 80px 0;
+    padding: 80px 0 0 0;
 }
 
 #portfolio .intro-text {
@@ -50,6 +50,8 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     /* Sombra mais sutil para cada item */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Indica que é clicável */
 }
 
 .gallery-item:hover {
@@ -67,108 +69,102 @@
     /* Remove espaço extra abaixo da imagem */
 }
 
-/* Call to Action Final */
-#final-cta {
-    background-color: var(--cor-secundaria);
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-    margin-top: 80px;
-    /* Margem antes do footer */
+/* Modal (Lightbox) Styles */
+.lightbox-modal {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    /* Fixado na tela */
+    z-index: 2000;
+    /* Acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Habilita rolagem se a imagem for muito grande */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fundo preto semi-transparente */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#final-cta h2 {
-    color: white;
-    font-size: 2.8em;
-    margin-bottom: 25px;
-}
-
-#final-cta h2::after {
-    background-color: white;
-}
-
-#final-cta p {
-    font-size: 1.2em;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    line-height: 1.8;
-}
-
-#final-cta .btn {
-    background-color: white;
-    color: var(--cor-principal);
-    padding: 18px 40px;
-    font-size: 1.1em;
-    display: inline-block;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#final-cta .btn:hover {
-    background-color: var(--cor-acento-forte);
-    color: white;
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--cor-principal);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-footer .footer-content {
+.lightbox-modal.active {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    text-align: left;
+    /* Mostra o modal */
 }
 
-footer .footer-col {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    /* Largura máxima da imagem dentro do modal */
+    max-height: 90%;
+    /* Altura máxima da imagem dentro do modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-footer .footer-col h4 {
-    color: var(--cor-acento-suave);
-    margin-bottom: 20px;
-    font-size: 1.4em;
+.lightbox-content img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-footer .footer-col ul li {
-    margin-bottom: 10px;
-}
-
-footer .footer-col a {
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
     color: white;
-    transition: color 0.3s ease;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-footer .footer-col a:hover {
-    color: var(--cor-acento-forte);
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-footer .social-icons a {
-    font-size: 1.5em;
-    margin: 0 10px;
+.lightbox-nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
     color: white;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-footer .social-icons a:hover {
-    color: var(--cor-acento-forte);
+.lightbox-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-footer .copyright {
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
+.lightbox-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
+
+.lightbox-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 /* Media Queries para Responsividade */
 @media (max-width: 992px) {
@@ -232,6 +228,18 @@ footer .copyright {
     .gallery-item img {
         height: 250px;
         /* Aumenta altura da imagem em mobile */
+    }
+
+    /* Modal para Mobile */
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+    }
+
+    .lightbox-nav {
+        font-size: 20px;
+        padding: 10px;
     }
 
     footer .footer-content {
